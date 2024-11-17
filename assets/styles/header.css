@@ -1,0 +1,83 @@
+/* Estilo general del header */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #023E8A;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 30px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    gap: 40px;
+}
+
+/* Enlace de header */
+.header__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+/* Logo de imagen en el header */
+.header__img {
+    width: 90px;
+}
+
+/* Texto del header */
+.header__texto {
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* Menu principal */
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
+}
+
+/* Lista de enlaces en el menú */
+.menu__list {
+    display: flex;
+    gap: 25px; /* Espacio entre los elementos del menú */
+}
+
+/* Enlace de cada elemento del menú */
+.menu__link a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px; /* Espacio alrededor del texto */
+    transition: background-color 0.3s;
+}
+
+/* Efecto de hover */
+.menu__link a:hover {
+    background-color: #03045E;
+    border-radius: 5px;
+}
+
+/* Ajuste del espacio en el body para evitar superposición con el header */
+body {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu header */
+}
+
+a{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+
+}
+
+

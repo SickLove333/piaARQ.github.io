@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.guardia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.persona img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.persona h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.persona ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.persona ul li {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.botones button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.botones button:hover {
+    background-color: #0056b3;
+}
+
+#resultado {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
