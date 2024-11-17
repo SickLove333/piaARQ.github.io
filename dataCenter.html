@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta charset="UTF-8">
+   <title>Seguridad en centros de cómputo</title>
+   <link rel="shortcut icon" type="image/png" href="res/logo.png">
+   <link rel="stylesheet" href="./assets/styles/data.css">
+   <link rel="stylesheet" href="./assets/styles/header.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+    <a href="#" class="header__link">
+        <h1 class="header__texto"><a href="index.html">Verifica que eres humano 3/4</a></h1>
+    </a>    
+</header>
+
+<section>
+    <h1>Si fueras el guardia de seguridad de un Data Center, ¿A quien dejarías entrar?</h1>
+    </section>
+    
+
+<section class="guardia">
+    <div class="persona">
+        <img id="persona-imagen" src="" alt="Foto de la persona">
+        <h2 id="persona-nombre"></h2>
+        <ul id="persona-parametros"></ul>
+        <div class="botones">
+            <button onclick="permitirAcceso()">Permitir Acceso</button>
+            <button onclick="denegarAcceso()">Denegar Acceso</button>
+        </div>
+    </div>
+    <div id="resultado"></div>
+</section>
+
+<script src="assets/scripts/dataC.js"></script>
+</body>
+</html>

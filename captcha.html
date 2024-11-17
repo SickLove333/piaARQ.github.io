@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta charset="UTF-8">
+   <title>Seguridad en centros de cómputo</title>
+   <link rel="shortcut icon" type="image/png" href="res/logo.png">
+   <link rel="stylesheet" href="./assets/styles/captcha.css">
+   <link rel="stylesheet" href="./assets/styles/header.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="header__link">
+            <h1 class="header__texto"><a href="index.html">Verifica que eres humano 1/4</a></h1>
+        </a>    
+    </header>
+
+<section class="contenido">
+<h1>Realiza el Captcha para verificar que eres un humano 1/4</h1>
+<p>Haz clic en las imágenes que representen elementos de seguridad informática, y/o que aporten a esta.</p>
+</section>
+
+<div class="captcha-container">
+    <img src="assets/img/messiSalva.jpeg" alt="Mala contraseña" onclick="seleccionarImagen(this, 0)">
+    <img src="assets/img/biometrico.jpg" alt="Verificación biometrica" onclick="seleccionarImagen(this, 1)">
+    <img src="assets/img/antvirunnamed.png" alt="Antivirus" onclick="seleccionarImagen(this, 2)">
+    <img src="assets/img/brokencamera.jpg" alt="0 Vigilancia" onclick="seleccionarImagen(this, 3)">
+    <img src="assets/img/Respaldos.jpeg" alt="Respaldos de Seguridad" onclick="seleccionarImagen(this, 4)">
+    <img src="assets/img/enchufes.jpg" alt="Sobrecarga de enchufes" onclick="seleccionarImagen(this, 5)">
+</div>
+
+<button onclick="verificarCaptcha()">Verificar</button>
+
+<div id="mensaje"></div>
+
+<script>
+    // Almacena el estado de selección de cada imagen
+    const seleccion = [false, false, false, false, false, false];
+
+    // Índices de las imágenes correctas
+    const correctIndexes = [1, 2, 4];
+
+    // Función para seleccionar/deseleccionar una imagen
+    function seleccionarImagen(img, index) {
+        seleccion[index] = !seleccion[index];  // Alterna el estado de selección
+        img.classList.toggle('selected'); // Cambia la clase visualmente
+    }
+
+    // Función para verificar el CAPTCHA
+    function verificarCaptcha() {
+        // Verifica que solo las imágenes correctas estén seleccionadas
+        const isCorrect = correctIndexes.every(index => seleccion[index]) && 
+                          seleccion.filter((isSelected, index) => isSelected && !correctIndexes.includes(index)).length === 0;
+
+        const mensaje = document.getElementById('mensaje');
+        if (isCorrect) {
+            mensaje.textContent = '¡Correcto! Aquí tienes la pista: "F1reW4ll"';
+            mensaje.style.color = "green";
+            setTimeout(() => {
+                window.location.href = "touring.html";
+            }, 1000);
+        } else {
+            mensaje.textContent = 'Intenta de nuevo. Solo selecciona las imágenes de seguridad.';
+            mensaje.style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>
