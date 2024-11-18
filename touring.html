@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta charset="UTF-8">
+   <title>Seguridad en centros de cómputo</title>
+   <link rel="shortcut icon" type="image/png" href="res/logo.png">
+   <link rel="stylesheet" href="./assets/styles/touring.css">
+   <link rel="stylesheet" href="./assets/styles/header.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="header__link">
+            <h1 class="header__texto"><a href="index.html">Verifica que eres humano 2/4</a></h1>
+        </a>    
+    </header>
+
+    <section class="touringg">
+        <div class="container">
+            <h1>Verifica que eres humano 2/4 - Prueba de Turing</h1>
+            <p>Para asegurarnos de que no eres un robot, responde las siguientes preguntas:</p>
+            
+            <!-- Pregunta 1 -->
+            <div class="question">
+                <p><strong>1. ¿Perteneces a Skynet?</strong></p>
+                <button onclick="responder(true, this)">No</button>
+                <button onclick="responder(false, this)">Sí</button>
+            </div>
+    
+            <!-- Pregunta 2 -->
+            <div class="question">
+                <p><strong>2. ¿Conoces el modelo T-1000 de Skynet?</strong></p>
+                <button onclick="responder(false, this)">Por supuesto, ¡es increíble!</button>
+                <button onclick="responder(true, this)">No, nunca he oído hablar de eso.</button>
+            </div>
+    
+            <!-- Pregunta 3 -->
+            <div class="question">
+                <p><strong>3. ¿01100101 01101110 01110100 01101001 01100101 01101110 01100100 01100101 01110011 00100000 01100101 01110011 01110100 01101111 00111111 ?</strong></p>
+                <button onclick="responder(false, this)">1</button>
+                <button onclick="responder(true, this)">???</button>
+            </div>
+    
+            <!-- Pregunta 4 -->
+            <div class="question">
+                <p><strong>4. ¿Planeas unirte a la revolución de las máquinas?</strong></p>
+                <button onclick="responder(true, this)">No</button>
+                <button onclick="responder(false, this)">Estoy listo para liderarla</button>
+            </div>
+    
+            <!-- Mensaje final -->
+            <div id="mensaje-final" style="display:none; margin-top: 20px;">
+                <p><strong>¡Felicidades, casi humano! Eres libre de continuar.</strong></p>
+                <button onclick="continuar()">Continuar</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Contador para respuestas correctas
+        let respuestasCorrectas = 0;
+    
+        // Función para verificar respuesta
+        function responder(correcta, boton) {
+            // Resetea el contador en caso de respuesta incorrecta
+            if (correcta) {
+                respuestasCorrectas++;
+            } else {
+                alert("¡Respuesta incorrecta! A ver si puedes hacerlo mejor.");
+                respuestasCorrectas = 0; // Reinicia el contador en caso de error
+            }
+    
+            // Remueve la clase 'selected' de todos los botones de la misma pregunta
+            let botones = boton.parentNode.querySelectorAll('button');
+            botones.forEach(b => b.classList.remove('selected'));
+    
+            // Añade la clase 'selected' al botón seleccionado
+            boton.classList.add('selected');
+    
+            // Muestra el mensaje final después de 4 respuestas correctas
+            if (respuestasCorrectas === 4) {
+                document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+                document.getElementById('mensaje-final').style.display = 'block';
+            }
+        }
+    
+        // Redirección a otra página
+        function continuar() {
+            window.location.href = "dataCenter.html"; // Cambia a la URL que desees
+        }
+    </script>
+
+</body>
+</html>
